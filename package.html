@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .columns {
   float: left;
   width: 33.3%;
@@ -31,9 +35,10 @@
 }
 
 .price .header {
-  background-color: rgb(155, 117, 117);
-  color: white;
+  background-color: rgb(85, 83, 83);
+  color: rgb(235, 233, 233);
   font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .price li {
@@ -46,6 +51,7 @@
 .price .grey {
   background-color: #eee;
   font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .button {
@@ -64,17 +70,6 @@
     width: 100%;
   }
 }
-@media (max-width: 768px) {
-    .navbar-menu {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        flex-direction: column;
-        display: none;
-    } 
-}
     </style>
 </head>
 <body>
@@ -83,25 +78,25 @@
     <h2 style="text-align:center">Price Plan</h2>
 
     <div class="pricing"></div>
-    <div class="columns">
-      <ul class="price">
-        <li class="header">Free Trial 30 Day</li>
-        <li class="grey">Free</li>
-        <li>Limited Access</li>
-        <li>Acces More Information</li>
-        <li class="grey"><a href="UI after payment.html" class="button">Purchase</a></li>
-      </ul>
-    </div>
-    
-    <div class="columns">
-      <ul class="price">
-        <li class="header" style="  background-color: rgb(155, 117, 117);">General</li>
-        <li class="grey">$4.99 / year</li>
-        <li>Limited Access</li>
-        <li>Acces More Information</li>
-        <li class="grey"><a href="UI after payment2.html" class="button">Purchase</a></li>
-      </ul>
-    </div>
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Free Trial 30 Day</li>
+          <li class="grey">Free</li>
+          <li>Limited Access</li>
+          <li>Acces More Information</li>
+          <li class="grey"><a href="UI after payment.html" class="button">Purchase</a></li>
+        </ul>
+      </div>
+      
+      <div class="columns">
+        <ul class="price">
+          <li class="header">General</li>
+          <li class="grey">$4.99 / year</li>
+          <li>Limited Access</li>
+          <li>Acces More Information</li>
+          <li class="grey"><a href="UI after payment2.html" class="button">Purchase</a></li>
+        </ul>
+      </div>
     
     <div class="columns">
       <ul class="price">
@@ -112,6 +107,7 @@
         <li class="grey"><a href="UI after payment3.html" class="button">Purchase</a></li>
       </ul>
     </div>
+  </div>
 
 
 </body>
