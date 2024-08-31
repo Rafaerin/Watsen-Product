@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Classroom UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: transform 0.6s;
+        }
+        
+        .flashcard .front, .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .flashcard .back {
+            transform: rotateY(180deg);
+            background: #f9f9f9;
+        }
+        
+        .flashcard.flipped .front {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard.flipped .back {
+            transform: rotateY(0deg);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        #planOutput {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        #planOutput div {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .day-plan input {
+            width: calc(100% - 100px);
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .day-plan button {
+            width: 90px;
+            font-size: 14px;
+            background-color: #28a745;
+        }
+
+        .day-plan button:hover {
+            background-color: #218838;
+        }
+</style>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="img/boy.png" alt="Donald" class="profile-img">
+                <p class="profile-name">Donald</p>
+                <p class="profile-role">Student</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./nuvian.html">Home</a></li>
+                    <li><a href="#">Assignment</a></li>
+                    <li><a href="./calendar.html">Calender</a></li>
+                    <li><a href="./flashcard.html">Flash Card</a></li>
+                    <li><a href="./Classui.html">Classroom</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Classroom</h1>
+                <nav class="top-nav">
+                    <a href="">Courses</a>
+                    <a href="">Grades</a>
+                    <a href="./settings.html">Setting</a>
+                    <a href="./Classui.html">Classroom</a>
+                </nav>
+            </header>
+            <section class="class">
+                <div class="class-card">
+                    <h2>Web Programming Class</h2>
+                    <p>Teached by Ms.Rena</p>
+                </div>
+            </section>
+            <section class="courses">
+                <div class="course-card">
+                    <h2>HTML</h2>
+                    <p>Web Development Fundamentals</p>
+                </div>
+                <div class="course-card">
+                    <h2>CSS</h2>
+                    <p>Web Development Fundamentals</p>
+                </div>
+                <div class="course-card">
+                    <h2>Java Script</h2>
+                    <p>Web Development Fundamentals</p>
+                </div>
+            </section>
+            <section class="grades-section">
+                <table class="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Assignment</th>
+                            <th>Date</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Assignment 1</td>
+                            <td>2024-03-15</td>
+                            <td>92/100</td>
+                        </tr>
+                        <tr>
+                            <td>Assignment 2</td>
+                            <td>2024-03-25</td>
+                            <td>0/100</td>
+                        </tr>
+                        <tr>
+                            <td>Mid Exam</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="assignments-section">
+                <table class="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>Assignment</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Assignment 1</strong>
+                                <p>Introduction to HTML, CSS</p>
+                            </td>
+                            <td>2024-03-17</td>
+                            <td><span class="status submitted">Submitted</span></td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Assignment 2</strong>
+                                <p>Introduction to Java Script</p>
+                            </td>
+                            <td>2024-03-25</td>
+                            <td><span class="status not-submitted">Not Submitted</span></td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Mid Exam</strong>
+                                <p>Making simple web</p>
+                            </td>
+                            <td>2023-06-10</td>
+                            <td><span class="status not-started">Not Started</span></td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>            
+        </main>
+    </div>
+</body>
+</html>

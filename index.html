@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="plan.css">
+  
+    <style>
+
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: rgb(85, 83, 83);
+  color: rgb(235, 233, 233);
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+/* @media (max-width: 768px) {
+    .navbar-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        display: none;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+.navbar-menu.active {
+    display: flex;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding-bottom: 5px; 
+  position: relative;
+} */
+.nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-icon {
+  width: 20px;  /* Adjust size as needed */
+  height: 20px;
+  margin-right: 5px; /* Space between icon and text */
+  margin-bottom: 5px;
+  vertical-align: middle; /* Align icon vertically with the text */
+}
+
+.nav ul li {
+  margin: 15px 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+
+.nav ul li a:hover {
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+
+.main-content {
+  margin-left: 200px; /* Margin to accommodate the sidebar */
+  padding: 20px;
+  width: calc(100% - 220px);
+  padding-top: 100px; /* Add space for the fixed header */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding-bottom: 5px; /* Space for underline */
+  position: relative;
+}
+
+.top-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s;
+}
+
+.top-nav a:focus::after,
+.top-nav a:active::after,
+.top-nav a.active::after {
+  width: 100%;
+}
+
+.top-nav a {
+
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 15px;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.text p {
+    text-align: center;
+    padding-top: 2px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.nuviantext p{
+    text-align: center;
+    font-family:sans-serif;
+    font-size: 30px;
+}
+
+.container1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+
+
+.nuviantext h1 p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+header h1 {
+  padding-left: 15px;
+}
+
+.columns {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.freeplan  {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  
+}
+
+.freeplan a {
+  text-decoration: none;
+  font-size: 35px;
+  background : rgb(43, 40, 40);
+color :rgb(235, 227, 227);
+transition:ease 0.6s;
+padding: 16px;
+border-bottom-left-radius: 16px;
+border-bottom-right-radius: 16px;
+border-top-left-radius: 16px;
+border-top-right-radius: 16px;
+}
+ 
+.freeplan a:hover {
+background : rgb(202, 198, 198);
+color:rgb(34, 32, 32);
+}
+.image2 img {
+ width: 500px;
+ height: 500px;
+ margin-top: 80px;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="container1">
+        <nav class="navbar">
+            <div class="navbar-brand">Nuvian
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <header>
+              <h1>Watsen</h1>
+              <nav class="top-nav">
+                  <a href="./signin.html">Sign In</a>
+                  <!-- <a href="#">Grades</a> -->
+              </nav>
+          </header>
+        </nav>
+        </div>
+        <div class="image2">
+                    
+          <img src="./Untitled design.jpg" alt="tes" width="" height="">
+          
+      </div>
+       
+        <div class="nuviantext">
+        <p>What Is Watsen ?</p>
+    </div>
+        <div class="text">
+        <p>Watsen is a leading educational app launched on August 29, 2024, marking a breakthrough in the digital learning landscape. As a revolutionary solution in today's information era, Watsen is designed to redefine how we learn, teach, and interact with knowledge. By combining advanced technology with a data-driven learning approach, this app provides an educational experience that is not only innovative but also highly relevant and personalized.
+
+          Transformation in Digital Learning:
+          
+          In a world that is increasingly digitally connected, Watsen recognizes the urgent need for flexible and effective learning methods. Therefore, Watsen presents a platform that prioritizes personalization and interactivity as its core elements. Every user, whether a student or educator, will benefit from a learning experience tailored to their individual needs and learning styles.
+                    </p>
+                </div>
+
+                    
+                    
+             
+
+
+    <h2 style="text-align:center">Price Plan</h2>
+    <div class="freeplan">
+      <li><a href="./UI after payment.html">Click Here To Get Free Trial !</a></li>
+      <br>
+      </div>
+
+    
+      <div class="pricing"></div>
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Free Trial 30 Day</li>
+          <li class="grey">Free</li>
+          <li>Limited Access</li>
+          <li>Acces More Information</li>
+          <li class="grey"><a href="UI after payment.html" class="button">Purchase</a></li>
+        </ul>
+      </div>
+      
+      <div class="columns">
+        <ul class="price">
+          <li class="header">General</li>
+          <li class="grey">$4.99 / year</li>
+          <li>Limited Access</li>
+          <li>Acces More Information</li>
+          <li class="grey"><a href="UI after payment2.html" class="button">Purchase</a></li>
+        </ul>
+      </div>
+    
+    <div class="columns">
+      <ul class="price">
+        <li class="header">School</li>
+        <li class="grey">$ 39.99 / year</li>
+        <li>Limited Access</li>
+        <li>Acces More Information</li>
+        <li class="grey"><a href="UI after payment3.html" class="button">Purchase</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+</body>
+<script src="nuvian.js"></script>
+
+</html>

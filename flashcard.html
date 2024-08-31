@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        div {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #flashcardContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .flashcard {
+            width: 200px;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .flashcard .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .flashcard .plan {
+            font-size: 14px;
+        }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        div {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #flashcardContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .flashcard {
+            width: 200px;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .flashcard .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .flashcard .plan {
+            font-size: 14px;
+        }
+
+        .plan-input {
+            margin-top: 10px;
+        }
+
+        .plan-input textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .plan-input div {
+            margin: 5px 0;
+        }
+
+        .plan-entry {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Academic Planner</h1>
+    <div>
+        <input type="date" id="startDate" placeholder="Start Date">
+        <input type="date" id="endDate" placeholder="End Date">
+        <button id="generateDates">Generate Dates</button>
+    </div>
+    <div id="dateInputs"></div>
+    <button id="displayPlans">Display Plans</button>
+    <div id="flashcardContainer"></div>
+    
+<script>
+    let calendar = [];
+
+    document.getElementById('generateDates').addEventListener('click', function() {
+        const startDate = new Date(document.getElementById('startDate').value);
+        const endDate = new Date(document.getElementById('endDate').value);
+        const dateInputs = document.getElementById('dateInputs');
+
+        if (isNaN(startDate.getTime()) || isNaN(endDate.getTime()) || startDate > endDate) {
+            dateInputs.innerHTML = '<div>Please enter a valid date range.</div>';
+            return;
+        }
+
+        calendar = generateAcademicCalendar(startDate, endDate);
+
+        dateInputs.innerHTML = '';
+        calendar.forEach((date, index) => {
+            dateInputs.innerHTML += `
+                <div class="plan-entry">
+                    <label for="plan${index}">${date.toDateString()}:</label>
+                    <textarea id="plan${index}" placeholder="Enter plan for ${date.toDateString()}"></textarea>
+                </div>
+            `;
+        });
+    });
+
+    document.getElementById('displayPlans').addEventListener('click', function() {
+        const flashcardContainer = document.getElementById('flashcardContainer');
+        flashcardContainer.innerHTML = '';
+
+        calendar.forEach((date, index) => {
+            const plan = document.getElementById(`plan${index}`).value || "No specific plan for this day.";
+            flashcardContainer.innerHTML += `
+                <div class="flashcard">
+                    <div class="date">${date.toDateString()}</div>
+                    <div class="plan">${plan}</div>
+                </div>
+            `;
+        });
+    });
+
+    function generateAcademicCalendar(startDate, endDate) {
+        let calendar = [];
+        let currentDate = startDate;
+        const holidays = ["2024-12-25", "2025-01-01"];
+        const studyDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+        while (currentDate <= endDate) {
+            let dayOfWeek = currentDate.toLocaleString('en-US', { weekday: 'long' });
+            let dateString = currentDate.toISOString().split('T')[0];
+
+            if (studyDays.includes(dayOfWeek) && !holidays.includes(dateString)) {
+                calendar.push(new Date(currentDate));
+            }
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        return calendar;
+    }
+</script>
+</body>
+</html>
+
+</body>
+</html>
+

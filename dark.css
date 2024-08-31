@@ -1,0 +1,49 @@
+:root  {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #1a0dab;
+}
+
+/* Dark theme */
+.dark-mode{
+    --background-color: #030000;
+    --text-color: #0a0000;
+    --link-color: #8ab4f8;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    color: var(--link-color);
+}
+
+/* Hide the default checkbox */
+.theme-toggle input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the toggle switch */
+.theme-toggle span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Apply dark mode when checkbox is checked */
+#theme-toggle:checked ~ body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#theme-toggle:checked ~ .top-nav a {
+    color: var(--link-color);
+}

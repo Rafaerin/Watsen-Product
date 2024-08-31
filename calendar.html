@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Style Calendar with Task Input</title>
+    <link rel="stylesheet" href="class.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .calendar-container {
+            width: 350px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgb(230, 198, 198);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-header button {
+            background-color: #101113;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-header button:hover {
+            background-color: #0056b3;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar-days div {
+            padding: 5px;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .calendar-dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .calendar-dates div {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-dates div:hover {
+            background-color: #e0e0e0;
+        }
+
+        .selected {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+        }
+
+        #selectedDate {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #taskInput {
+            margin-top: 10px;
+        }
+
+        #taskInput input[type="text"] {
+            width: 90%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #taskInput button {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #101113;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        #taskInput button:hover {
+            background-color: #0056b3;
+        }
+
+        #tasks {
+            margin-top: 10px;
+        }
+
+        #tasks div {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="img/boy.png" alt="Donald" class="profile-img">
+                <p class="profile-name">Donald</p>
+                <p class="profile-role">Student</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="./class.html">
+                            <img src="img/home.png" alt="Home Icon" class="nav-icon"> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="assignment.html">
+                            <img src="img/assignment.png" alt="Assignment Icon" class="nav-icon"> Assignment
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./calendar.html">
+                            <img src="img/calendar.png" alt="Assignment Icon" class="nav-icon"> Calender
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="./flashcard.html">
+                            <img src="img/flashcard.png" alt="Assignment Icon" class="nav-icon"> Flashcard
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="./codeeditor.html">
+                            <img src="img/editor.png" alt="Editor Icon" class="nav-icon"> Live Editor
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./about.html">
+                            <img src="/aboutimages.png" alt="Editor Icon" class="nav-icon"> About
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <!-- <a href="#">
+                            <img src="img/chatbot.png" alt="Chatbot Icon" class="nav-icon"> Chat Bot
+                        </a> -->
+                    </li>
+                </ul> 
+                
+
+
+
+
+
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Watsen</h1>
+                <nav class="top-nav">
+                    <a href="./settings.html">Setting</a>
+                    <a href="./course1.html">Courses</a>
+                    <a href="./signin.html">Account</a>
+                    <a href="./package.html">Plan</a>
+                    <!-- <a href="#">Grades</a> -->
+                </nav>
+            </header
+
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth">Prev</button>
+            <div id="monthYear"></div>
+            <button id="nextMonth">Next</button>
+        </div>
+        <div class="calendar-days">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="calendar-dates" id="dates"></div>
+        <div id="selectedDate"></div>
+        <div id="taskInput">
+            <input type="text" id="taskDescription" placeholder="Enter task for the selected date">
+            <button id="saveTask">Save Task</button>
+        </div>
+        <div id="tasks"></div>
+    </div>
+
+    <script>
+        const monthYearDisplay = document.getElementById('monthYear');
+        const datesContainer = document.getElementById('dates');
+        const selectedDateDisplay = document.getElementById('selectedDate');
+        const taskInput = document.getElementById('taskInput');
+        const taskDescription = document.getElementById('taskDescription');
+        const saveTaskButton = document.getElementById('saveTask');
+        const tasksContainer = document.getElementById('tasks');
+
+        let currentDate = new Date();
+        let selectedDate = null;
+        let tasks = {};
+
+        function renderCalendar(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth();
+
+            // Set month and year display
+            monthYearDisplay.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+            // Get the first day of the month and the number of days in the month
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+
+            // Get the starting day of the week for the first day of the month
+            const startDay = firstDay.getDay();
+
+            // Clear previous dates
+            datesContainer.innerHTML = '';
+
+            // Add empty divs for days before the start of the month
+            for (let i = 0; i < startDay; i++) {
+                datesContainer.innerHTML += '<div></div>';
+            }
+
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateDiv = document.createElement('div');
+                dateDiv.textContent = day;
+                dateDiv.dataset.date = `${year}-${month + 1}-${day}`;
+                dateDiv.addEventListener('click', function() {
+                    document.querySelectorAll('.calendar-dates div').forEach(div => div.classList.remove('selected'));
+                    dateDiv.classList.add('selected');
+                    selectedDate = dateDiv.dataset.date;
+                    selectedDateDisplay.textContent = `Selected Date: ${selectedDate}`;
+                    displayTasks(selectedDate);
+                });
+                datesContainer.appendChild(dateDiv);
+            }
+        }
+
+        function displayTasks(date) {
+            tasksContainer.innerHTML = '';
+            if (tasks[date]) {
+                tasks[date].forEach(task => {
+                    const taskDiv = document.createElement('div');
+                    taskDiv.textContent = task;
+                    tasksContainer.appendChild(taskDiv);
+                });
+            }
+        }
+
+        saveTaskButton.addEventListener('click', function() {
+            if (selectedDate && taskDescription.value) {
+                if (!tasks[selectedDate]) {
+                    tasks[selectedDate] = [];
+                }
+                tasks[selectedDate].push(taskDescription.value);
+                taskDescription.value = '';
+                displayTasks(selectedDate);
+            } else {
+                alert('Please select a date and enter a task.');
+            }
+        });
+
+        // Event listeners for buttons
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar(currentDate);
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar(currentDate);
+        });
+
+        // Initial render
+        renderCalendar(currentDate);
+    </script>
+
+</body>
+</html>
+

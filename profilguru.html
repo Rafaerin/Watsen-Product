@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengajar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    text-align: center; 
+}
+
+.title {
+    font-size: 2em; 
+    margin-bottom: 20px; 
+    color: #333; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.image-box img {
+    display: block;
+    width: 250px; 
+    height: auto;
+    border-radius: 8px; 
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .container img {
+        width: 100%; 
+        max-width: 300px; 
+    }
+}
+
+</style>
+<body>
+    <div class="main-container">
+        <h1 class="title">Profil Pengajar</h1>
+        <div class="container">
+            <div class="image-box">
+                <img src="" alt="1">
+            </div>
+            <div class="image-box">
+                <img src="" alt="2">
+            </div>
+            <div class="image-box">
+                <img src="" alt="3">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
