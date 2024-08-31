@@ -7,6 +7,6 @@ Daniel Raharja
 
 Brief Explanation 
 
-Watson adalah platform yang menyediakan pembelajaran kelas digital dalam memeberikan edukasi dan pembelajaran 
+Watsen adalah platform yang menyediakan pembelajaran kelas digital dalam memeberikan edukasi dan pembelajaran 
 tentang programming dan menyediakan berbagai macam bahasa pemrograman untuk pembelajaran yang lanjut
 
