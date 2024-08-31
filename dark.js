@@ -1,4 +1,3 @@
-// Optional: Apply saved theme from localStorage
 const checkbox = document.getElementById('theme-toggle');
 checkbox.checked = localStorage.getItem('theme') === 'dark';
 

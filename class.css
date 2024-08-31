@@ -15,15 +15,15 @@ body {
 }
 
 .sidebar {
-  position: fixed; /* Make the sidebar fixed */
-  top: 80px; /* Position it below the header */
+  position: fixed; 
+  top: 80px; 
   left: 0;
   width: 200px;
-  height: calc(100vh - 80px); /* Full height minus header height */
+  height: calc(100vh - 80px); 
   background-color: #f8f9fa;
   padding: 20px;
   border-right: 1px solid #ddd;
-  overflow-y: auto; /* Add scroll if content exceeds height */
+  overflow-y: auto; 
 }
 
 .profile {
@@ -52,11 +52,11 @@ body {
 }
 
 .nav-icon {
-  width: 20px;  /* Adjust size as needed */
+  width: 20px; 
   height: 20px;
-  margin-right: 5px; /* Space between icon and text */
+  margin-right: 5px; 
   margin-bottom: 5px;
-  vertical-align: middle; /* Align icon vertically with the text */
+  vertical-align: middle; 
 }
 
 .nav ul li {
@@ -82,10 +82,10 @@ body {
 
 
 .main-content {
-  margin-left: 200px; /* Margin to accommodate the sidebar */
+  margin-left: 200px; 
   padding: 20px;
   width: calc(100% - 220px);
-  padding-top: 100px; /* Add space for the fixed header */
+  padding-top: 100px; 
 }
 
 header {
@@ -107,7 +107,7 @@ header {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  padding-bottom: 5px; /* Space for underline */
+  padding-bottom: 5px; 
   position: relative;
 }
 
@@ -180,18 +180,18 @@ header {
 }
 
 .course-card:hover, .class-card:hover {
-  background-color: #f1f1f1; /* Change the background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase the shadow */
+  background-color: #f1f1f1; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Assignments section */
+
 .assignments-section {
   margin-top: 40px;
   padding-left: 20px;
 }
 
 .assignments-table {
-  width: 100%; /* Sesuaikan lebar tabel agar penuh */
+  width: 100%; 
   border-collapse: collapse;
   margin: 0;
   background-color: #fff;

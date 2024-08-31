@@ -13,7 +13,7 @@ body {
   font-family: Arial;
 }
 
-/* Center website */
+
 .main {
   max-width: 1000px;
   margin: auto;
@@ -28,38 +28,36 @@ h1 {
   margin: 10px -16px;
 }
 
-/* Add padding BETWEEN each column */
 .row,
 .row > .column {
   padding: 8px;
 }
 
-/* Create three equal columns that floats next to each other */
 .column {
   float: left;
   width: 33.33%;
-  display: none; /* Hide all elements by default */
+  display: none;
 }
 
-/* Clear floats after rows */ 
+
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Content */
+
 .content {
   background-color: white;
   padding: 10px;
 }
 
-/* The "show" class is added to the filtered elements */
+
 .show {
   display: block;
 }
 
-/* Style the buttons */
+
 .btn {
   border: none;
   outline: none;
@@ -80,7 +78,7 @@ h1 {
 </head>
 <body>
 
-<!-- MAIN (Center website) -->
+
 <div class="main">
 
 <h1>MYLOGO.COM</h1>
@@ -97,7 +95,7 @@ h1 {
   <button class="btn" onclick="filterSelection('people')"> People</button>
 </div>
 
-<!-- Portfolio Gallery Grid -->
+
 <div class="row">
   <div class="column nature">
     <div class="content">
@@ -204,7 +202,7 @@ function w3RemoveClass(element, name) {
 }
 
 
-// Add active class to the current button (highlight it)
+
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
